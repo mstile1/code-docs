@@ -8,8 +8,8 @@ category: cpp
 
 Strong typing via inheritance, with the ability to inherit 'skills'/operations.
 
-A canonical example: math functions that take *angle* as a float. 
-Is it meant to be degrees or radians? Probably radians...? 
+A canonical example: math functions that take *angle* as a float.  
+Is it meant to be degrees or radians? Probably radians...?  
 It's common for data driven angles (e.g. supplied from script/json) to use degrees as they're easier to visualize.
 
 #### Common legacy function signature
