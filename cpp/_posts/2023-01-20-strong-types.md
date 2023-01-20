@@ -1,8 +1,6 @@
 ---
 layout: post
-title:  "Opening a port on a local network"
+title:  "# Strong Types ftw :fire:"
 tag: c++
 category: cpp
 ---
-
-# Strong Types ftw :fire:
