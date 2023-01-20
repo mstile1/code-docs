@@ -2,4 +2,4 @@
 
 [Opening Network Ports for local access][def]
 
-[def]: network/open-port.md
+[def]: _pages/network/open-port.md
