@@ -49,11 +49,11 @@ inline radian::operator degree() const
 void apply_some_kind_of_rotation( radian angle );
 
 double my_angle = 90.0;
-apply_some_kind_of_rotation( my_angle ); // doesn't compile :fire:
+apply_some_kind_of_rotation( my_angle ); // awesome, doesn't compile!
 
 radian my_angle{ c_pi / 2 };
-apply_some_kind_of_rotation( my_angle ); // :+1:
+apply_some_kind_of_rotation( my_angle ); // works as expected
 
 degree my_angle{ 90.0 };
-apply_some_kind_of_rotation( my_angle ); // implicitly converts to radian :fire:
+apply_some_kind_of_rotation( my_angle ); // nice, implicitly converts to radian
 ```
