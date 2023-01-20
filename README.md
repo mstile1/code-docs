@@ -7,3 +7,5 @@
     </li>
   {% endfor %}
 </ul>
+
+![avatar](/assets/mstile_avatar_768.webp =256x256)
