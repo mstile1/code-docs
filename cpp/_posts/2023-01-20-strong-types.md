@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "# Strong Types ftw :fire:"
-author: bfix
+title:  "Strong Types ftw"
+author: Brad Fix
 tag: c++
 category: cpp
 ---
+
+:fire:

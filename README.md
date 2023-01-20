@@ -8,6 +8,6 @@
   {% endfor %}
 </ul>
 
-
-
-<img src="assets/mstile_avatar_768.webp" alt="avatar" width="192" height="192"/>
+&nbsp;
+` `  
+<img src="assets/mstile_avatar_768.webp" alt="avatar" width="160" height="160"/>
