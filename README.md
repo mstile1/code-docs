@@ -3,7 +3,7 @@
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
@@ -12,4 +12,4 @@
 
 [Opening a port on a local network](network/open-port.html)
 
-[link2]({% post_url 2023-01-20-strong-types %})
+[link2]({{site.baseurl}}{% post_url 2023-01-20-strong-types %})
