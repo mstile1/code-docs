@@ -1,4 +1,4 @@
-# code-docs
-host some docs and how-tos for reference
+# Docs and how-tos
 
-Opening Network Ports for local access [network/open-port.md]
+[Opening Network Ports for local access][def]
+[def]: network/open-port.md

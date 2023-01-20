@@ -1,4 +1,4 @@
-#Opening a port on a local network
+# Opening a port on a local network
 
 1. Open Windows Firewall settings
 2. Go to Inbound Rules
