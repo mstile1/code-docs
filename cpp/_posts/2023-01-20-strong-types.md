@@ -13,13 +13,13 @@ Is it meant to be degrees or radians? Probably radians...?
 It's common for data driven angles (e.g. supplied from script/json) to use degrees as they're easier to visualize.
 
 #### Common legacy function signature
-```
+```c++
 void apply_some_kind_of_rotation( float angle ); // please pass me radians
 apply_some_kind_of_rotation( 90.0 ); // whoops
 ```
 
 #### Simple implementation of strong angle types
-```
+```c++
 inline constexpr auto c_pi = 3.1415926536;
 
 struct degree;
@@ -45,7 +45,7 @@ inline radian::operator degree() const
 ```
 
 #### Strong interface with compile-time guarantees
-```
+```c++
 void apply_some_kind_of_rotation( radian angle );
 
 double my_angle = 90.0;
