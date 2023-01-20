@@ -12,4 +12,4 @@
 
 [Opening a port on a local network](network/open-port.html)
 
-{% post_url cpp/_posts/2023-01-20-strong-types.md%}
+{% post_url cpp/2023-01-20-strong-types.md %}
