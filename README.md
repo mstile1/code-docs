@@ -8,8 +8,6 @@
   {% endfor %}
 </ul>
 
-<img src="assets/mstile_avatar_768.webp" alt="avatar" width="256" height="256"/>
 
-[Opening a port on a local network](network/open-port.html)
 
-[link2]({{site.baseurl}}{% post_url 2023-01-20-strong-types %})
+<img src="assets/mstile_avatar_768.webp" alt="avatar" width="192" height="192"/>
