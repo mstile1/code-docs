@@ -8,9 +8,9 @@ category: cpp
 
 Strong typing via inheritance, with the ability to inherit 'skills'/operations.
 
-A canonical example is math functions take a floating point value *angle*.
+A canonical example: math functions that take *angle* as a float.
 Is it meant to be degrees or radians? Probably radians...?
-It's often common for data driven angles to be specified and stored as degrees as they're easier to visualize.
+It's common for data driven angles (e.g. supplied from script/json) to use degrees as they're easier to visualize.
 
 ```
 // common function signature
@@ -19,9 +19,12 @@ void apply_some_kind_of_rotation( float angle ); // please pass me radians
 apply_some_kind_of_rotation( 90.0 ); // whoops
 ```
 
+#### A simple implementation of strong angle types
 ```
 // radian and degree strong types
 //--------------------------------------------------------
+inline constexpr auto c_pi = 3.1415926536;
+
 struct degree;
 struct radian : public roam::strong_type< radian, double, roam::st_cmp, roam::st_math >
 {
@@ -32,23 +35,20 @@ struct radian : public roam::strong_type< radian, double, roam::st_cmp, roam::st
 struct degree : public roam::strong_type< degree, double, roam::st_cmp, roam::st_math >
 {
     using strong_type::strong_type;
-    operator radian() const; // implicit conversion to radian
+    operator radian() const // implicit conversion to radian
+    {
+        return radian{ this->get() / 180 * c_pi };
+    }
 };
 
-inline constexpr auto c_pi = 3.1415926536;
-inline degree::operator radian() const
-{
-    return radian{ this->get() / 180 * c_pi };
-}
 inline radian::operator degree() const
 {
     return degree{ this->get() / c_pi * 180 };
 }
 ```
 
+#### Strong interface with compile-time guarantees
 ```
-// stronger function signature
-//--------------------------------------------------------
 void apply_some_kind_of_rotation( radian angle );
 
 double my_angle = 90.0;
