@@ -1,9 +1,62 @@
 ---
 layout: post
-title:  "Strong Types ftw"
+title:  "Strong Types ftw :fire:"
 author: Brad Fix
 tag: c++
 category: cpp
 ---
 
-:fire:
+Strong typing via inheritance, with the ability to inherit 'skills'/operations.
+
+A canonical example is math functions take a floating point value *angle*.
+Is it meant to be degrees or radians? Probably radians...?
+It's often common for data driven angles to be specified and stored as degrees as they're easier to visualize.
+
+```
+// common function signature
+//--------------------------------------------------------
+void apply_some_kind_of_rotation( float angle ); // please pass me radians
+apply_some_kind_of_rotation( 90.0 ); // whoops
+```
+
+```
+// radian and degree strong types
+//--------------------------------------------------------
+struct degree;
+struct radian : public roam::strong_type< radian, double, roam::st_cmp, roam::st_math >
+{
+    using strong_type::strong_type;
+    operator degree() const; // implicit conversion to degree
+};
+
+struct degree : public roam::strong_type< degree, double, roam::st_cmp, roam::st_math >
+{
+    using strong_type::strong_type;
+    operator radian() const; // implicit conversion to radian
+};
+
+inline constexpr auto c_pi = 3.1415926536;
+inline degree::operator radian() const
+{
+    return radian{ this->get() / 180 * c_pi };
+}
+inline radian::operator degree() const
+{
+    return degree{ this->get() / c_pi * 180 };
+}
+```
+
+```
+// stronger function signature
+//--------------------------------------------------------
+void apply_some_kind_of_rotation( radian angle );
+
+double my_angle = 90.0;
+apply_some_kind_of_rotation( my_angle ); // doesn't compile :fire:
+
+radian my_angle{ c_pi / 2 };
+apply_some_kind_of_rotation( my_angle ); // :+1:
+
+degree my_angle{ 90.0 };
+apply_some_kind_of_rotation( my_angle ); // implicitly converts to radian :fire:
+```
