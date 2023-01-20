@@ -8,4 +8,4 @@
   {% endfor %}
 </ul>
 
-![avatar](/assets/mstile_avatar_768.webp =256x256)
+<img src="/assets/mstile_avatar_768.webp" alt="avatar" width="256" height="256"/>
