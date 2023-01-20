@@ -6,3 +6,4 @@ plugins:
 relative_links:
   enable: true
   collections: true
+permalink: /:categories/:slug:output_ext
