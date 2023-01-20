@@ -8,4 +8,6 @@
   {% endfor %}
 </ul>
 
-<img src="/assets/mstile_avatar_768.webp" alt="avatar" width="256" height="256"/>
+<img src="assets/mstile_avatar_768.webp" alt="avatar" width="256" height="256"/>
+
+[Opening a port on a local network](/network/open-port.html)
