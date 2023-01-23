@@ -1,3 +1,5 @@
+[Pages Home](https://mstile1.github.io/code-docs/)
+
 # Docs and how-tos
 
 <ul>
